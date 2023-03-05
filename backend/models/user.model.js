@@ -9,7 +9,11 @@ const userSchema = new Schema({
         minlength:3,
         trim:true
     }
-});
+},
+{
+    timestamps: true
+}
+);
 
 const User = mongoose.model('users', userSchema);
 

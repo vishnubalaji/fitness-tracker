@@ -1,8 +1,8 @@
+require('dotenv').config()
+
 const express = require('express'); 
 const cors = require('cors');
 const mongoose = require('mongoose');
-
-require('dotenv').config()
 
 const port = process.env.PORT || 5000;
 const uri = process.env.ATLAS_URI;
@@ -22,6 +22,13 @@ connection.once('open', () => {
     console.log("MongoDB database connection established successfully");
 })
 
+// Routes for CRUD operations
+const exercisesRouter = require('./routes/exercises');
+const usersRouter = require('./routes/users');
+
+app.use('/exercises', exercisesRouter);
+app.use('/users', usersRouter);
+
 app.listen(port, ()=>{
     console.log(`listening on ${port}`)
 })
@@ -31,9 +38,3 @@ app.get('/', (req, res) => {
     Routes included are, /users and /exercises`)
     
 })
-
-// const exercisesRouter = require('./routes/exercises');
-const usersRouter = require('./routes/users');
-
-// app.use('/exercises', exercisesRouter);
-app.use('/users', usersRouter);

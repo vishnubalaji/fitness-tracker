@@ -3,7 +3,9 @@
 # dependencies
 /node_modules
 backend/node_modules
+testing/node_modules
 backend/creds/
+testing/server/.env
 /.pnp
 .pnp.js
 

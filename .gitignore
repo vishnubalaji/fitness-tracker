@@ -6,7 +6,7 @@ backend/node_modules
 backend/creds/
 /.pnp
 .pnp.js
-
+testing/node_modules
 # testing
 /coverage
 
